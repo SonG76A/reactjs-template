@@ -1,5 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'MedievalSharp', cursive;
+}
+
 body {
-  background: var(--tg-theme-secondary-bg-color, white);
-  padding: 0;
-  margin: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), 
+                url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    color: #f0e6d2;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(30, 25, 20, 0.85);
+    border-radius: 20px;
+    border: 3px solid #8b4513;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #8b4513;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #ffd700;
+    text-shadow: 3px 3px 5px #000;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #c0c0c0;
+    margin-top: 10px;
+}
+
+.resources {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border: 2px solid #5d4037;
+}
+
+.resource {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.resource .icon {
+    font-size: 2rem;
+}
+
+.game-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.buildings, .castles {
+    background: rgba(50, 40, 30, 0.8);
+    padding: 25px;
+    border-radius: 20px;
+    border: 2px solid #8b4513;
+}
+
+h2 {
+    color: #ffb74d;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #ffb74d;
+    padding-bottom: 10px;
+}
+
+.building, .enemy-castle {
+    background: rgba(70, 60, 50, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 2px solid #a1887f;
+    transition: transform 0.3s;
+}
+
+.building:hover, .enemy-castle:hover {
+    transform: translateY(-5px);
+    border-color: #ffd700;
+}
+
+.building {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.building-icon {
+    font-size: 3rem;
+    min-width: 60px;
+    text-align: center;
+}
+
+.building-info h3 {
+    color: #ffcc80;
+    font-size: 1.5rem;
+}
+
+.building-info p {
+    color: #b0bec5;
+    margin-top: 5px;
+}
+
+.upgrade-btn, .attack-btn {
+    background: linear-gradient(to bottom, #8b4513, #5d4037);
+    color: #ffd700;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-left: auto;
+    border: 2px solid #ffd700;
+}
+
+.upgrade-btn:hover, .attack-btn:hover {
+    background: linear-gradient(to bottom, #a0522d, #8b4513);
+    transform: scale(1.05);
+}
+
+.upgrade-btn:disabled, .attack-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.enemy-castle h3 {
+    color: #ef5350;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.enemy-castle p {
+    margin: 8px 0;
+    font-size: 1.2rem;
+}
+
+.log {
+    background: rgba(20, 15, 10, 0.9);
+    padding: 25px;
+    border-radius: 20px;
+    border: 2px solid #8b4513;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#logContent {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+#logContent p {
+    padding: 8px;
+    border-bottom: 1px solid #5d4037;
+    color: #b0bec5;
+}
+
+/* Адаптивность */
+@media (max-width: 900px) {
+    .game-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .resources {
+        flex-direction: column;
+        gap: 15px;
+    }
 }
